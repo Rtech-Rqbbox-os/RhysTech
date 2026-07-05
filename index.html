@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>RhysTech - All Projects</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230a0a1a'/><text x='32' y='42' text-anchor='middle' font-size='28' font-weight='800' fill='%2300d4ff'>R</text></svg>">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;min-height:100vh;font-family:'Segoe UI',system-ui,sans-serif;background:#050510;color:#fff}
+.bg-grid{position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:48px 48px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,5,16,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{font-size:16px;font-weight:700;background:linear-gradient(135deg,#00d4ff,#107c10);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:20px}
+.nav-links a{color:rgba(255,255,255,.4);text-decoration:none;font-size:12px;letter-spacing:2px;transition:color .2s}
+.nav-links a:hover{color:#fff}
+
+/* HERO */
+.hero{padding:140px 40px 80px;text-align:center;position:relative}
+.hero-icon{width:80px;height:80px;margin:0 auto 24px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.15);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:800;color:#00d4ff}
+.hero h1{font-size:clamp(32px,5vw,56px);font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,#fff 30%,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .sub{font-size:14px;color:rgba(255,255,255,.3);letter-spacing:4px;margin-bottom:32px}
+.hero-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap}
+.hero-stats .stat{text-align:center}
+.hero-stats .num{font-size:28px;font-weight:700;color:#00d4ff}
+.hero-stats .label{font-size:10px;color:rgba(255,255,255,.25);letter-spacing:2px;margin-top:2px}
+
+/* SECTION */
+.section{padding:60px 40px;max-width:1200px;margin:0 auto}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:24px;font-weight:700;letter-spacing:3px;margin-bottom:4px}
+.section-title p{font-size:12px;color:rgba(255,255,255,.25);letter-spacing:3px}
+
+/* PROJECTS */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.project{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:32px;transition:all .3s;text-decoration:none;color:inherit}
+.project:hover{border-color:rgba(0,212,255,.3);transform:translateY(-4px)}
+.project-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.project h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.project .desc{font-size:12px;color:rgba(255,255,255,.4);line-height:1.5;margin-bottom:12px}
+.project .links{display:flex;gap:8px}
+.project .link{padding:4px 12px;border-radius:6px;font-size:11px;text-decoration:none;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);transition:all .2s}
+.project .link:hover{border-color:rgba(0,212,255,.3);color:#00d4ff}
+.project .link.live{background:rgba(0,212,255,.1);border-color:rgba(0,212,255,.2);color:#00d4ff}
+.project .tags{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
+.project .tag{padding:2px 8px;border-radius:10px;font-size:9px;letter-spacing:1px;background:rgba(255,255,255,.04);color:rgba(255,255,255,.3)}
+
+/* BANNERS */
+.banners{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:40px}
+.banner-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:8px;overflow:hidden;transition:all .3s}
+.banner-card:hover{border-color:rgba(0,212,255,.2)}
+.banner-card img{width:100%;display:block}
+.banner-card .info{padding:16px}
+.banner-card .info h4{font-size:13px;font-weight:600;margin-bottom:2px}
+.banner-card .info p{font-size:11px;color:rgba(255,255,255,.3)}
+
+/* FOOTER */
+footer{padding:40px;text-align:center;border-top:1px solid rgba(255,255,255,.04);color:rgba(255,255,255,.15);font-size:11px;letter-spacing:2px}
+footer a{color:#00d4ff;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+
+<nav>
+  <a class="nav-brand" href="#">
+    <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="6" fill="#0a0a1a"/><text x="16" y="22" text-anchor="middle" font-size="16" font-weight="800" fill="#00d4ff">R</text></svg>
+    <span>RHYSTECH</span>
+  </a>
+  <div class="nav-links">
+    <a href="#projects">PROJECTS</a>
+    <a href="#banners">ASSETS</a>
+    <a href="https://github.com/Rtech-Rqbbox-os">GITHUB</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-icon">R</div>
+  <h1>RhysTech</h1>
+  <div class="sub">BUILDING THE FUTURE OF GAMING</div>
+  <div class="hero-stats">
+    <div class="stat"><div class="num">5</div><div class="label">PROJECTS</div></div>
+    <div class="stat"><div class="num">5</div><div class="label">REPOS</div></div>
+    <div class="stat"><div class="num">5</div><div class="label">PAGES</div></div>
+    <div class="stat"><div class="num">7</div><div class="label">GAMES</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">DESKTOP APPS</div></div>
+  </div>
+</div>
+
+<div class="section" id="projects">
+  <div class="section-title">
+    <h2>PROJECTS</h2>
+    <p>EVERYTHING BUILT BY RHYSTECH</p>
+  </div>
+  <div class="projects">
+    <a href="https://rtech-rqbbox-os.github.io/RQBBOX-MODE/" class="project">
+      <div class="project-icon" style="background:rgba(16,124,16,.1)">🎮</div>
+      <h3>RQBBOX MODE</h3>
+      <div class="desc">Xbox-style gaming dashboard with full-screen kiosk, Quick Resume, achievements, and 7 built-in games.</div>
+      <div class="links">
+        <span class="link live">LIVE</span>
+        <span class="link" href="https://github.com/Rtech-Rqbbox-os/RQBBOX-MODE">REPO</span>
+      </div>
+      <div class="tags"><span class="tag">ELECTRON</span><span class="tag">GAMING</span><span class="tag">.EXE</span></div>
+    </a>
+    <a href="https://rtech-rqbbox-os.github.io/RBOWS-1/" class="project">
+      <div class="project-icon" style="background:rgba(0,120,212,.1)">🖥️</div>
+      <h3>RBOWS 1</h3>
+      <div class="desc">Windows 10 desktop environment with file explorer, terminal, calculator, settings, and an app store.</div>
+      <div class="links">
+        <span class="link live">LIVE</span>
+        <span class="link" href="https://github.com/Rtech-Rqbbox-os/RBOWS-1">REPO</span>
+      </div>
+      <div class="tags"><span class="tag">ELECTRON</span><span class="tag">DESKTOP</span><span class="tag">.EXE</span></div>
+    </a>
+    <a href="https://rtech-rqbbox-os.github.io/rqbbox-life/" class="project">
+      <div class="project-icon" style="background:rgba(0,212,255,.1)">🧬</div>
+      <h3>RQBBOX LIFE</h3>
+      <div class="desc">Neon life simulation — build your career, home, relationships, and wealth in RQBBOX City.</div>
+      <div class="links">
+        <span class="link live">LIVE</span>
+        <span class="link" href="https://github.com/Rtech-Rqbbox-os/rqbbox-life">REPO</span>
+      </div>
+      <div class="tags"><span class="tag">ELECTRON</span><span class="tag">SIMULATION</span><span class="tag">.EXE</span></div>
+    </a>
+    <a href="https://rtech-rqbbox-os.github.io/RQBBOX-OS-1/" class="project">
+      <div class="project-icon" style="background:rgba(136,68,255,.1)">💿</div>
+      <h3>RQBBOX OS 1</h3>
+      <div class="desc">The umbrella OS hub that connects all RQBBOX apps into one unified experience.</div>
+      <div class="links">
+        <span class="link live">LIVE</span>
+        <span class="link" href="https://github.com/Rtech-Rqbbox-os/RQBBOX-OS-1">REPO</span>
+      </div>
+      <div class="tags"><span class="tag">ELECTRON</span><span class="tag">HUB</span><span class="tag">.EXE</span></div>
+    </a>
+    <a href="https://rtech-rqbbox-os.github.io/RhysTech/" class="project" style="border-color:rgba(255,221,0,.15)">
+      <div class="project-icon" style="background:rgba(255,221,0,.1)">⚡</div>
+      <h3>RhysTech Hub</h3>
+      <div class="desc">This page — the master landing page for all RhysTech projects, assets, and documentation.</div>
+      <div class="links">
+        <span class="link live">LIVE</span>
+        <span class="link" href="https://github.com/Rtech-Rqbbox-os/RhysTech">REPO</span>
+      </div>
+      <div class="tags"><span class="tag">HUB</span><span class="tag">LANDING PAGE</span></div>
+    </a>
+  </div>
+</div>
+
+<div class="section" id="banners">
+  <div class="section-title">
+    <h2>ASSETS</h2>
+    <p>ICONS, BANNERS, AND LOGOS</p>
+  </div>
+  <div class="banners">
+    <div class="banner-card">
+      <div style="height:200px;background:linear-gradient(135deg,#050510,#080820);display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 1280 640" width="100%" height="100%"><rect width="1280" height="640" fill="#050510"/><text x="640" y="300" text-anchor="middle" font-size="80" font-weight="800" fill="#107c10" font-family="Segoe UI">RQBBOX</text><text x="640" y="380" text-anchor="middle" font-size="36" font-weight="200" fill="#00d4ff" font-family="Segoe UI" letter-spacing="12">MODE</text></svg>
+      </div>
+      <div class="info"><h4>RQBBOX MODE Banner</h4><p>1280×640 · Social preview</p></div>
+    </div>
+    <div class="banner-card">
+      <div style="height:200px;background:linear-gradient(135deg,#0078d4,#001a33);display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 1280 640" width="100%" height="100%"><rect width="1280" height="640" fill="#0078d4"/><rect x="540" y="200" width="80" height="80" rx="4" fill="rgba(255,255,255,.2)"/><rect x="660" y="200" width="80" height="80" rx="4" fill="rgba(255,255,255,.2)"/><rect x="540" y="320" width="80" height="80" rx="4" fill="rgba(255,255,255,.2)"/><rect x="660" y="320" width="80" height="80" rx="4" fill="rgba(255,255,255,.2)"/><text x="640" y="480" text-anchor="middle" font-size="28" font-weight="200" fill="rgba(255,255,255,.5)" font-family="Segoe UI" letter-spacing="8">RBOWS 1</text></svg>
+      </div>
+      <div class="info"><h4>RBOWS 1 Banner</h4><p>1280×640 · Social preview</p></div>
+    </div>
+    <div class="banner-card">
+      <div style="height:200px;background:linear-gradient(135deg,#080818,#0a1628);display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 1280 640" width="100%" height="100%"><rect width="1280" height="640" fill="#080818"/><circle cx="640" cy="280" r="60" fill="none" stroke="#00d4ff" stroke-width="2" opacity=".3"/><circle cx="640" cy="280" r="40" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity=".5"/><path d="M625,270 L625,290 L650,280 Z" fill="#00ff88" opacity=".8"/><text x="640" y="400" text-anchor="middle" font-size="48" font-weight="800" fill="#00d4ff" font-family="Segoe UI">RQBBOX</text><text x="640" y="440" text-anchor="middle" font-size="24" font-weight="200" fill="rgba(0,212,255,.5)" font-family="Segoe UI" letter-spacing="8">LIFE</text></svg>
+      </div>
+      <div class="info"><h4>RQBBOX LIFE Banner</h4><p>1280×640 · Social preview</p></div>
+    </div>
+    <div class="banner-card">
+      <div style="height:200px;background:linear-gradient(135deg,#0a0a1a,#0d1525);display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 1280 640" width="100%" height="100%"><rect width="1280" height="640" fill="#0a0a1a"/><rect x="520" y="180" width="100" height="100" rx="8" fill="#107c10" opacity=".8"/><rect x="660" y="180" width="100" height="100" rx="8" fill="#00d4ff" opacity=".8"/><rect x="520" y="320" width="100" height="100" rx="8" fill="#0078d4" opacity=".8"/><rect x="660" y="320" width="100" height="100" rx="8" fill="#ff0080" opacity=".8"/><text x="640" y="500" text-anchor="middle" font-size="32" font-weight="200" fill="rgba(255,255,255,.3)" font-family="Segoe UI" letter-spacing="8">RQBBOX OS</text></svg>
+      </div>
+      <div class="info"><h4>RQBBOX OS 1 Banner</h4><p>1280×640 · Social preview</p></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  RhysTech · 2026 · Part of the <a href="https://rtech-rqbbox-os.github.io/RQBBOX-OS-1/">RQBBOX OS</a> ecosystem
+</footer>
+</body>
+</html>
